@@ -1,0 +1,39 @@
+<div class="nav-left-sidebar sidebar-dark">
+  <div class="menu-list">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-divider">Menu</li>
+          <li class="nav-item">
+            <a class="nav-link  {% if active == 'admin' %} active {% endif %}" href="/admin"><i class="fa fa-solid fa-chart-line"></i>E Commerce Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  {% if active == 'users' %} active {% endif %}" href="/admin/users"><i class="fa fa-users" aria-hidden="true"></i>Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  {% if active == 'categories' %} active {% endif %}" href="/admin/categories"
+              ><i class="fa fa-regular fa-clipboard"></i>Categies</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  {% if active == 'brands' %} active {% endif %}" href="/admin/brands"
+              ><i class="fa fa-regular fa-star"></i>Brands</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

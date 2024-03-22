@@ -1,0 +1,50 @@
+{% extends "/admin/index.html" %} {% block content %}
+<div class="dashboard-wrapper">
+  <div class="dashboard-influence">
+    <div class="container-fluid dashboard-content">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <a href="{{url_for('users')}}">
+                <button type="button" class="btn btn-sm btn-out-primary">
+                  <i class="fa fa-chevron-circle-left" aria-hidden="true"></i
+                  >Back
+                </button></a
+              >
+            </div>
+            <div class="card-body">
+              <h2 class="text-danger">Do you have to delete?</h2>
+              <h3>{{user['name']}}</h3>
+              <ul>
+                <li>{{user['gender']}}</li>
+                <li>{{user['phone']}}</li>
+                <li>{{user['email']}}</li>
+                <li>{{user['address']}}</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="{{url_for('users')}}">
+                <button type="submit" class="btn btn-sm btn-outline-danger">
+                  <i class="fa fa-undo" aria-hidden="true"></i>
+                  Cancel
+                </button>
+              </a>
+              <a href="#">
+                <button
+                  type="submit"
+                  class="btn btn-sm btn-outline-primary float-right"
+                >
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+
+                  Delete
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+</div>

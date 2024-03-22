@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include 'admin/header.html' %}
+  <body>
+    <div class="dashboard-main-wrapper">
+      {% include '/admin/navigation.html' %} {% include '/admin/leftSide.html' %}
+      {% block content %} {% endblock %}
+    </div>
+    {% include 'admin/script.html' %}
+  </body>
+</html>
