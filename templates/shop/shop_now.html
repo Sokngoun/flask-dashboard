@@ -1,0 +1,33 @@
+{% extends "/shop/index.html" %} {% block content %}
+
+<div class="">
+  <div class="row">
+    <div class="card mb-4 col" style="width: 18rem; height: 22rem">
+      <div class="w-full h-full d-flex justify-content-center p-2">
+        <img
+          class="card-img-top object-fit-contain"
+          style="width: 18rem; height: 20rem"
+          src="{{ product.image }}"
+          alt="{{ product.name }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <h3 class="card-title">{{ product.title }}</h3>
+      <p
+        class="card-text font-weight-bold bg-success p-2 rounded-lg text-white"
+      >
+        {{product.category}}
+      </p>
+      <p class="card-text font-weight-bold mt-4">
+        <span>Price: $</span>{{product.price}}
+      </p>
+      <p class="card-text">{{ product.description }}</p>
+      <a href="{{ url_for('checkout',id=product.id) }}" class="btn btn-primary"
+        >Book Now</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %}

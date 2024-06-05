@@ -1,0 +1,30 @@
+{% extends "/shop/index.html" %} {% block content %}
+
+  <div class="row">
+    {% for product in data %}
+    <div class="col-md-3 cols-sm-12 mt-4">
+      <div class="card mb-4" style="width: 18rem">
+        <div class="w- h-25 d-flex justify-content-center p-2">
+          <div class="w-fit h-full">
+            <img
+              class="card-img-top object-center"
+              src="{{ product.image }}"
+              alt="{{ product.name }}"
+            />
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text"><span>Price: $</span>{{product.price}}</p>
+          <p class="card-text">{{ product.description }}</p>
+          <a
+            href="{{ url_for('shop_now',id=product.id) }}"
+            class="btn btn-primary"
+            >Shop Now</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

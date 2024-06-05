@@ -22,7 +22,7 @@
 
             <div class="card-body">
               <h3>Add New User</h3>
-              <form>
+              <form method="post" action="{{url_for('save_user')}}">
                 <div class="form-group">
                   <label for="name">Name</label>
                   <input
@@ -30,6 +30,7 @@
                     class="form-control"
                     id="name"
                     aria-describedby="Name"
+                    name="name"
                     placeholder="Name"
                   />
                 </div>
@@ -42,13 +43,39 @@
                       data-toggle="dropdown"
                       aria-expanded="false"
                       id="gender"
+                      name="gender"
                     >
                       M
                     </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">M</a>
-                      <a class="dropdown-item" href="#">F</a>
-                      <a class="dropdown-item" href="#">Other</a>
+                    <div
+                      class="dropdown-menu pre-scrollable"
+                      aria-labelledby="dropdownMenu3"
+                    >
+
+                      <button
+                        name="gender"
+                        value="M"
+                        class="dropdown-item text-right"
+                        type="button"
+                      >
+                        M
+                      </button>
+                      <button
+                      name="gender"
+                      value="F"
+                      class="dropdown-item text-right"
+                      type="button"
+                    >
+                      F
+                    </button>
+                    <button
+                    name="gender"
+                    value="Other"
+                    class="dropdown-item text-right"
+                    type="button"
+                  >
+                  Other
+                  </button>
                     </div>
                   </div>
                 </div>
@@ -60,6 +87,7 @@
                     aria-describedby="phone"
                     type="text"
                     class="form-control"
+                    name="phone"
                   />
                 </div>
                 <div class="form-group">
@@ -70,6 +98,7 @@
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
+                    name="email"
                   />
                   <small id="emailHelp" class="form-text text-muted"
                     >We'll never share your email with anyone else.</small
@@ -82,6 +111,7 @@
                     id="address"
                     aria-describedby="address"
                     placeholder="Address"
+                    name="address"
                   ></textarea>
                 </div>
 
