@@ -1,30 +1,35 @@
 {% extends "/shop/index.html" %} {% block content %}
 
-  <div class="row">
-    {% for product in data %}
-    <div class="col-md-3 cols-sm-12 mt-4">
-      <div class="card mb-4" style="width: 18rem">
-        <div class="w- h-25 d-flex justify-content-center p-2">
-          <div class="w-fit h-full">
-            <img
-              class="card-img-top object-center"
-              src="{{ product.image }}"
-              alt="{{ product.name }}"
-            />
-          </div>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ product.title }}</h5>
-          <p class="card-text"><span>Price: $</span>{{product.price}}</p>
-          <p class="card-text">{{ product.description }}</p>
-          <a
-            href="{{ url_for('shop_now',id=product.id) }}"
-            class="btn btn-primary"
-            >Shop Now</a
-          >
-        </div>
+<div
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
+>
+  {% for product in data %}
+  <div class="bg-white shadow-lg rounded-md space-y-2 md:space-y-4 h-50">
+    <div class="w-full h-[300px] p-2">
+      <img
+        class="object-contain w-full h-full"
+        src="{{ product.image }}"
+        alt="{{ product.name }}"
+      />
+    </div>
+    <div class="p-2 space-y-2">
+      <h5 class="font-bold text-xl md:text-2xl line-clamp-1	">{{ product.title }}</h5>
+      <div class="flex items-center gap-2">
+        <div>Price:</div>
+        <div class="font-bold text-lg">${{product.price}}</div>
+      </div>
+      <p class="font-light text-lg line-clamp-3 md:line-clamp-6">
+        {{ product.description }}
+      </p>
+      <div class="pb-4">
+        <a
+          href="{{ url_for('shop_now',id=product.id) }}"
+          class="px-3 py-2 hover:cursor-pointer bg-blue-500 hover:bg-blue-600 rounded-md text-white"
+          >Shop Now</a
+        >
       </div>
     </div>
-    {% endfor %}
   </div>
+  {% endfor %}
+</div>
 {% endblock %}

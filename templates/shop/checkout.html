@@ -1,15 +1,18 @@
 {% extends "/shop/index.html" %} {% block content %}
 
-<div class="row">
-  <div class="mb-4 col-8" style="width: 18rem; height: 22rem">
-    <h4 class="mb-4">Product Information</h4>
-    <img
-      class="card-img-top object-fit-contain mb-4"
-      style="width: 14rem; height: 14rem"
-      src="{{ product.image }}"
-      alt="{{ product.name }}"
-    />
-    <table class="table">
+<div
+  class="shadow bg-white rounded-md p-4 mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
+>
+  <div class="mb-4">
+    <h4 class="mb-4 font-bold text-2xl mg:text-4xl">Product Information</h4>
+    <div class="w-full h-[300px] lg:h-[400px] py-4">
+      <img
+        class="object-contain w-full h-full mb-4"
+        src="{{ product.image }}"
+        alt="{{ product.name }}"
+      />
+    </div>
+    <table class="w-full">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
@@ -31,68 +34,75 @@
     </table>
   </div>
   <div class="col-4">
-    <h4 class="card-title">Customer Information 🐶</h4>
+    <h4 class="mb-4 font-bold text-2xl mg:text-4xl">Customer Information 🐶</h4>
     <form
       method="post"
       enctype="multipart/form-data"
       action="{{ url_for('confirmBooking') }}"
+      class="space-y-4"
     >
       <input
         type="hidden"
-        class="form-control"
         id="id"
         value="{{product.id}}"
         name="id"
         aria-describedby="emailHelp"
         placeholder="Enter name"
       />
-      <div class="form-group">
-        <label for="name">Name</label>
+      <div>
+        <div>
+          <label for="name">Name</label>
+        </div>
         <input
           type="text"
-          class="form-control"
+          class="p-2 border-2 border-gray-200 rounded-md w-[300px]"
           id="name"
           name="name"
           aria-describedby="emailHelp"
           placeholder="Enter name"
         />
       </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
+      <div>
+        <div>
+          <label for="phone" class="">Phone</label>
+        </div>
         <input
           type="text"
-          class="form-control"
+          class="p-2 border-2 border-gray-200 rounded-md w-[300px]"
           id="phone"
           name="phone"
           aria-describedby="emailHelp"
           placeholder="Enter phone"
         />
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
+      <div class="">
+        <div><label for="exampleInputEmail1">Email address</label></div>
         <input
           type="email"
-          class="form-control"
+          class="p-2 border-2 border-gray-200 rounded-md w-[300px]"
           id="exampleInputEmail1"
           name="email"
           aria-describedby="emailHelp"
           placeholder="Enter email"
         />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
       </div>
-
-      <div class="form-group">
-        <label for="address">Address</label>
+      <div class="gap-2 items-center">
+        <div>
+          <label for="address">Address</label>
+        </div>
         <textarea
-          class="form-control"
+          class="p-2 border-2 border-gray-200 rounded-md w-[300px]"
           id="address"
           name="address"
           rows="3"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Book Now</button>
+      <button
+        type="submit"
+        class="px-3 py-2 hover:cursor-pointer bg-blue-500 hover:bg-blue-600 rounded-md text-white"
+      >
+        Book Now
+      </button>
     </form>
   </div>
 </div>
