@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!-- Bootstrap CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block styles %}{% endblock %}
+  </head>
+  <body class="max-w-7xl mx-auto p-4  bg-slate-100">
+    <div>{% block content %}{% endblock %}</div>
+  </body>
+  {% block scripts %}{% endblock %}
+  <!-- Bootstrap JS CDN -->
+</html>

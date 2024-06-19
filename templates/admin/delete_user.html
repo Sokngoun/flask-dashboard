@@ -21,6 +21,7 @@
                 <li>{{user['phone']}}</li>
                 <li>{{user['email']}}</li>
                 <li>{{user['address']}}</li>
+                <li>{{user['id']}}</li>
               </ul>
             </div>
             <div class="card-footer">
@@ -30,7 +31,7 @@
                   Cancel
                 </button>
               </a>
-              <a href="#">
+              <a href="{{url_for('confirm_delete',uid=user['id'])}}">
                 <button
                   type="submit"
                   class="btn btn-sm btn-outline-primary float-right"
